@@ -20,6 +20,7 @@ function getTask($id){
     return $tarea;
 }
 
+//Ver el video
 function insertTask($mermelada, $descripcion, $prioridad, $finalizada){
     $db = connectToDB();
     $sentencia = $db->prepare("INSERT INTO tareas(titulo, descripcion, prioridad, finalizada) VALUES(?, ?, ?, ?)");
