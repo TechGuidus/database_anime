@@ -3,7 +3,10 @@
 <div class="container">
 
     <div class="row mt-4">
+
+        
         <div class="col-md-4">
+        <a class="btn btn-warning" href="logout">Logout </a>
             <h2>Crear Tarea</h2>
             <form class="form-alta" action="createTask" method="post">
                 <input placeholder="titulo" type="text" name="title" id="title" required>
