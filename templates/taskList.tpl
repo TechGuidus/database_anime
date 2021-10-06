@@ -9,10 +9,15 @@
         <a class="btn btn-warning" href="logout">Logout </a>
             <h2>Crear Tarea</h2>
             <form class="form-alta" action="createTask" method="post">
-                <input placeholder="titulo" type="text" name="title" id="title" required>
+                <input placeholder="Nombre" type="text" name="title" id="title" required>
                 <textarea placeholder="descripcion" type="text" name="description" id="description"> </textarea>
-                <input placeholder="prioridad" type="number" name="priority" id="priority">
-                <input type="checkbox" name="done" id="done">
+                <input placeholder="prioridad" type="date" name="priority" id="priority">
+                <input type="number" name="episodios" id="episodios" placeholder="Cantidad de episodios">
+                <select name="selectGenres">
+                    {foreach from=$genres item=$genre}
+                        <option value="{$genre->id_genero}">{$genre->nombre}</option>   
+                    {/foreach}
+                </select>
                 <input type="submit" class="btn btn-primary" value="Guardar">
             </form>
         </div>
@@ -23,16 +28,9 @@
                 {foreach from=$tasks item=$task}
                     <li class="
                         list-group-item
-                        {if $task->finalizada} finalizada {/if}
                         ">
-                            <a href="viewTask/{$task->id_tarea}">{$task->titulo}</a> | {$task->descripcion|truncate:30}
-                            <a class="btn btn-danger" href="deleteTask/{$task->id_tarea}">Borrar</a>
-                            {if !$task->finalizada}
-                                <a class="btn btn-success" href="updateTask/{$task->id_tarea}">Done</a>
-                            {else}
-                                <!-- <a class="btn btn-success" href="updateTask/{$task->id_tarea}">Restore</a> -->
-                            {/if}
-                            
+                            <h1>{$task->nombre}</h1>
+                            <h4>{$task->descripcion|truncate:30}<h4>             
                     </li>
                 {/foreach}
             </ul>

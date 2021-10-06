@@ -35,15 +35,15 @@ switch ($params[0]) {
     case 'createTask': 
         $taskController->createTask(); 
         break;
-    case 'deleteTask': 
-        $taskController->deleteTask($params[1]); 
-        break;
-    case 'updateTask': 
-        $taskController->updateTask($params[1]); 
-        break;
-    case 'viewTask': 
-        $taskController->viewTask($params[1]); 
-        break;
+    // case 'deleteTask': 
+    //     $taskController->deleteTask($params[1]); 
+    //     break;
+    // case 'updateTask': 
+    //     $taskController->updateTask($params[1]); 
+    //     break;
+    // case 'viewTask': 
+    //     $taskController->viewTask($params[1]); 
+    //     break;
     default: 
         echo('404 Page not found'); 
         break;

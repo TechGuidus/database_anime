@@ -8,8 +8,9 @@ class TaskView {
         $this->smarty = new Smarty();
     }
 
-    function showTasks($tasks){
+    function showTasks($tasks, $genres){
         $this->smarty->assign('titulo', 'Lista de tareas');        
+        $this->smarty->assign('genres', $genres);
         $this->smarty->assign('tasks', $tasks);
 
         $this->smarty->display('templates/taskList.tpl');
@@ -18,7 +19,7 @@ class TaskView {
     function showTask($task){
         $this->smarty->assign('task', $task);
         $this->smarty->display('templates/taskDetail.tpl');
-     }
+    }
 
     function showHomeLocation(){
         header("Location: ".BASE_URL."home");

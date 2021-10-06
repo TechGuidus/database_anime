@@ -9,6 +9,6 @@
     flex-direction: column;
 }
 
-input, textarea {
+input, textarea, select {
     margin-bottom: 15px;
 }

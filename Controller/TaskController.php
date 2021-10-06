@@ -20,33 +20,28 @@ class TaskController{
         $this->authHelper->checkLoggedIn();
 
         $tasks = $this->model->getTasks();
-        $this->view->showTasks($tasks);
+        $genres = $this->model->getGenres();
+        $this->view->showTasks($tasks, $genres);
     }
 
     function createTask(){
-        if(!isset($_POST['done'])){
-            $done = 0;
-        }else{
-            $done = 1;
-        }
-
-        $this->model->insertTask($_POST['title'], $_POST['description'], $_POST['priority'], $done);
+        $this->model->insertTask($_POST['title'], $_POST['description'], $_POST['priority'], $_POST['episodios'],$_POST['selectGenres']);
         $this->view->showHomeLocation();
     }
 
-    function deleteTask($id){
-        $this->authHelper->checkLoggedIn();
+    // function deleteTask($id){
+    //     $this->authHelper->checkLoggedIn();
 
-        $this->model->deleteTaskFromDB($id);
-        $this->view->showHomeLocation();
-    }
+    //     $this->model->deleteTaskFromDB($id);
+    //     $this->view->showHomeLocation();
+    // }
 
-    function updateTask($id){
-        $this->authHelper->checkLoggedIn();
+    // function updateTask($id){
+    //     $this->authHelper->checkLoggedIn();
 
-        $this->model->updateTaskFromDB($id);
-        $this->view->showHomeLocation();
-    }
+    //     $this->model->updateTaskFromDB($id);
+    //     $this->view->showHomeLocation();
+    // }
     
     function viewTask($id){
         $this->authHelper->checkLoggedIn();
