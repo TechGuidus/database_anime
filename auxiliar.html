@@ -1,0 +1,56 @@
+<!----------  formulario para agregar series ----------->
+<form action="New" method="POST">
+    <label for="nombre">nombre</label>
+    <input type="text" name="nombre_input">
+    <br>
+
+    <label for="descripcion">descripcion</label>
+    <input type="text" name="descripcion_input">
+    <br>
+
+    <label for="fechaEmision">fechaEmision</label>
+    <input type="date" name="fechaEmision_input">
+    <br>
+
+    <label for="cantidadEpisodios">cantidadEpisodios</label>
+    <input type="text" name="cantidadEpisodios_input">
+    <br>
+
+    <button type="submit">Subir Serie</button>
+</form>
+
+<!------------------------------------------------------------------------------->
+
+<div class="container">
+    <h2>Cargar Nuevo<h2>
+
+            <form action=" " method="POST">
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Titulo De la Serie </label>
+                        <input required name="nombre_edit" type="text" class="form-control" id="formGroupExampleInput" value="{$chapter->nombre}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">descripcion </label>
+                    <input required name="descripcion_edit" type="text" class="form-control" id="formGroupExampleInput" value="{$chapter->descripcion}">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Fecha de Emision </label>
+                    <input required name="fechaEmision_edit" type="text" class="form-control" id="formGroupExampleInput" value="{$chapter->fechaEmision}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="formGroupExampleInput">Episodios </label>
+                        <input required name="cantidadEpisodios_edit" type="text" class="form-control" id="formGroupExampleInput" value="{$chapter->cantidadEpisodios}">
+                    </div>
+              
+
+    
+                <button type="submit" class="btn btn-primary mb-2">Editar</button>
+</div>
+
+</form>
+</div>
+   
